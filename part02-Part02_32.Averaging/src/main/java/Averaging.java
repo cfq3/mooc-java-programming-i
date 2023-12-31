@@ -4,12 +4,18 @@ public class Averaging {
     // implement the sum method here again
     public static int sum(int number1, int number2, int number3, int number4) {
         // write some code here
-        return 0;
+        int sum = number1 + number2 + number3 + number4;
+        return sum;
     }
 
     public static double average(int number1, int number2, int number3, int number4) {
-        //write some code here
-        return -1;
+        // call the sum method to get thee sum
+        int sum = sum(number1, number2, number3, number4);
+
+        // calculate the average
+        double result = 1.0 * sum / 4;
+        
+        return result;
     }
 
     public static void main(String[] args) {
