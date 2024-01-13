@@ -16,6 +16,10 @@ public class FirstAndLast {
 
             list.add(input);
         }
+        // get first string
+        System.out.println(list.get(0));
 
+        // get last string
+        System.out.println(list.get(list.size()-1));
     }
 }
