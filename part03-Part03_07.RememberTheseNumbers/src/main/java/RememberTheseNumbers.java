@@ -16,6 +16,12 @@ public class RememberTheseNumbers {
 
             numbers.add(luku);
         }
-
+        // Print the numbers received from the user (excluding -1)
+        // iterate through the indices of the 'numbers'
+        // retrieve each element and loop continues until the end of ArrayList
+        for (int i = 0; i < numbers.size(); i++) {
+            int num = numbers.get(i);
+            System.out.println(num);
+        }
     }
 }
