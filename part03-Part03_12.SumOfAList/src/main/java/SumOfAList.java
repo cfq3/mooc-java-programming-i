@@ -19,6 +19,17 @@ public class SumOfAList {
 
         System.out.println("");
 
-        // toteuta listan lukujen summan laskeminen tänne
+        // perform the calculation of the sum of the numbers in the list here
+
+        // Initialize sum outside of loop
+        int sum = 0;
+        
+        // iterate through each element of the ArrayList 'list'
+        for (Integer input: list) {
+            sum += input; // add current element 'input' to 'sum' variable
+        } 
+        
+        // print the sum of numbers stored in the ArrayList
+        System.out.println("Sum: " + sum);
     }
 }
