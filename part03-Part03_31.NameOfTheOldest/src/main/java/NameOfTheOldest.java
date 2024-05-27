@@ -12,7 +12,7 @@ public class NameOfTheOldest {
         int oldest = 0;
 
         while (true) {
-            String input = scanner.nextLine()
+            String input = scanner.nextLine();
             if (input.equals("")) {
                 break;
             }
