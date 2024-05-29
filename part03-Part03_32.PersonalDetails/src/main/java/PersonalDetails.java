@@ -7,48 +7,51 @@ public class PersonalDetails {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Initialize variables
-        int totalBirthYears = 0; // Store sum of all birth years
-        int count = 0;           // Count number of entries
-        String longestName = ""; // Store the longest name
-        int maxLength = 0;       // Store the length of the longest name
+        // Initialize an ArrayList to store usernames
+        ArrayList<String> userNames = new ArrayList<String>();
+
+        // Initialize the ArrayList to store use ages
+        ArrayList<Integer> userAges = new ArrayList<Integer>();
 
         while (true) {
-            String input = scanner.nextLine(); // Get input from user
+            String userInput = scanner.nextLine().trim();
 
-            // End loop if user enters an empty line
-            if (input.equals("")) {
-                break; // Exit the loop
+            if (userInput.length() > 0) {
+                String[] splitStringArray = userInput.split(",");
+
+                userNames.add(splitStringArray[0]);
+
+                userAges.add(Integer.valueOf(splitStringArray[1]));
             }
 
-            String[] data = input.split(","); // Split input string by commas into an array
-            int birthyear = Integer.valueOf(data[1]); // Convert the birth year(second element) into an integer
-            String name = data[0]; // Get the name (first element)
-
-            // Calculate longest name
-            int length = name.length(); 
-            if (length > maxLength) { // Check if the current name is longest found so far
-                maxLength = length;   // Update maxLength with the length of the current name
-                longestName = name;   // Update longestName with the current name
+            if (userInput.equals("")) {
+                break;
             }
 
-            // Add birthyear to the total sum of birth years
-            totalBirthYears += birthyear;
-            // Increment the count of entries
-            count++;
         }
 
-        // Calculate average birth year
-        int avgBirthyear;
-        if (count > 0) {
-            avgBirthyear = totalBirthYears / count;
-        } else {
-            avgBirthyear = 0;
+        int sumOfBirthYears = 0;
+        int numOfYears = 0;
+
+        int longestString = userNames.get(0).length();
+        int index = 0;
+
+        for (int i = 0; i < userNames.size(); i++) {
+
+            if (userNames.get(i).length() > longestString) {
+
+                longestString = userNames.get(i).length();
+                index = i;
+
+            }
+            sumOfBirthYears += userAges.get(i);
+            numOfYears++;
+
         }
-        
-        // Print the longest name
-        System.out.println("Longest name: " + longestName);
-        //Pring the average of the birth years
-        System.out.println("Average of the birth years: " + avgBirthyear);
+        double average = 1.0 * sumOfBirthYears / numOfYears;
+
+        System.out.println("Longest name: " + userNames.get(index));
+
+        System.out.println("Average of the birth years: " + average);
     }
 }
