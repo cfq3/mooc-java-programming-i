@@ -8,14 +8,13 @@ public class MainProgram {
 
         // declare objects for sum, even, and odd
         Statistics statistics = new Statistics();
-        Statistics statisticsEven = new newStatistics();
-        Statistics statisticsOdd = new newStatistics();
+        Statistics statisticsEven = new Statistics();
+        Statistics statisticsOdd = new Statistics();
         
         System.out.println("Enter numbers: ");
-        int number = scanner.nextInt();
         
         while(true) {
-            int number = Integer.valueOf(scanner.nextLine());
+            int number = scanner.nextInt();
 
             if (number == -1) {
                 break;
