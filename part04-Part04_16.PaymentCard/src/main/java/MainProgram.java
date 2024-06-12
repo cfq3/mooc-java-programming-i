@@ -6,10 +6,13 @@ public class MainProgram {
         PaymentCard card = new PaymentCard(50);
         System.out.println(card);
 
-        card.eatHeartily();
+        card.addMoney(15);
         System.out.println(card);
 
-        card.eatHeartily();
+        card.addMoney(10);
+        System.out.println(card);
+
+        card.addMoney(200);
         System.out.println(card);
     }
 }
