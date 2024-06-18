@@ -23,6 +23,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return this.title + ", " + this.pages + " pages, " + this.publicationYear;
+        return "Title: " + title + ", Pages: " + pages + ", Publication Year: " + publicationYear;
     }
 }

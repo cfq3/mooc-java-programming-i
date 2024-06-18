@@ -7,8 +7,8 @@ public class Main {
         
         // implement here the program that allows the user to enter 
         // book information and to examine them
+        
         ArrayList<Book> books = new ArrayList<>();
-
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -19,29 +19,24 @@ public class Main {
             }
 
             System.out.println("Pages: ");
-            int inputPages = Integer.valueOf(sc.nextInt());
+            int inputPages = Integer.parseInt(sc.nextLine());
 
             System.out.println("Publication Year: ");
-            int inputPublicationYear = Integer.valueOf(sc.nextInt());
+            int inputPublicationYear = Integer.parseInt(sc.nextLine());
 
             books.add(new Book(inputTitle, inputPages, inputPublicationYear));
         }
 
         System.out.println("What information will be printed?");
-
         String infoToBePrinted = sc.nextLine();
 
-        if (infoToBePrinted.toLowerCase().equals("everything")) {
-            for (Book element : books) {
-                System.out.print(element);
+        if (infoToBePrinted.equals("everything")) {
+            for (Book book : books) {
+                System.out.println(book);
             }
-        }
-            if (infoToBePrinted.toLowerCase().equals("name")) {
-                for (Book element : books) {
-                    System.out.println(element.getTitle());
-                }
-            } else {
-                return;
+        } else if (infoToBePrinted.equals("name")) {
+                for (Book book : books) {
+                    System.out.println(book.getTitle());
             }
         }
     }
