@@ -26,5 +26,6 @@ public class NumbersFromAFile {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
+        System.out.println("Numbers: " + count);
     }
 }
