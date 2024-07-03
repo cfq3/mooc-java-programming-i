@@ -3,8 +3,8 @@ public class Timer {
     private ClockHand sec;
 
     public Timer() {
-        this.hund = new Clockhand(100);
-        this.sec = new Clockhand(60);
+        this.hund = new ClockHand(100);
+        this.sec = new ClockHand(60);
     }
 
     public void advance() {
