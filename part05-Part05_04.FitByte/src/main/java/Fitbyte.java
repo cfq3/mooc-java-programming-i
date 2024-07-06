@@ -2,16 +2,16 @@ public class Fitbyte {
     private int age;
     private int restingHeartRate;
 
-    public Fitbyte(int age, restingHeartRate) {
+    public Fitbyte(int age, int restingHeartRate) {
         this.age = age;
         this.restingHeartRate = restingHeartRate;
     }
 
     public double targetHeartRate(double percentageOfMaximum) {
-        double answer;
+        double result;
         double maxHeartRate = 0;
         maxHeartRate = 206.3 - (0.711 * age);
-        answer = (maxHeartRate - restingHeartRate) * (percentageOfMaximum) + restingHeartRate;
-        return answer;
+        result = (maxHeartRate - restingHeartRate) * (percentageOfMaximum) + restingHeartRate;
+        return result;
     }
 }
