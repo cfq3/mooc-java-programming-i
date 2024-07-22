@@ -13,6 +13,8 @@ public class HealthStation {
         person.setWeight(person.getWeight() + 1);
     }
 
-    public int weighings() 
+    public int weighings() {
+        return weightCount;
+    }
 
 }
