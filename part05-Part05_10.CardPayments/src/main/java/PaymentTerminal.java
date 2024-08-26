@@ -38,6 +38,33 @@ public class PaymentTerminal {
         return -1;
     }
 
+    public boolean eatAffordably(PaymentCard card) {
+        // an affordable meal costs 2.50 euros
+        // if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
+        // otherwise false is returned
+        if (card.getBalance() >= 2.50) {
+            card.takeMoney(2.50);
+            affordableMeals += 1;
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public boolean eatHeartily(PaymentCard card) {
+        // a hearty meal costs 4.30 euros
+        // if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
+        // otherwise false is returned
+        if (card.getBalance() >= 4.30) {
+            card.takeMoney(4.30);
+            heartyMeals += 1;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     @Override
     public String toString() {
