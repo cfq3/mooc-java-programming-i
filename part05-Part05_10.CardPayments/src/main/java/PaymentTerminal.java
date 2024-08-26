@@ -1,7 +1,6 @@
 
 public class PaymentTerminal {
 
-
     private double money;  // amount of cash
     private int affordableMeals; // number of sold affordable meals
     private int heartyMeals;  // number of sold hearty meals
@@ -16,26 +15,28 @@ public class PaymentTerminal {
         // an affordable meal costs 2.50 euros
         // increase the amount of cash by the price of an affordable mean and return the change
         // if the payment parameter is not large enough, no meal is sold and the method should return the whole payment
-        double change = payment;
         if (payment >= 2.50) {
             affordableMeals += 1;
             this.money += 2.50;
             change = change - 2.50;
+            return payment;
+        } else {
+            return payment;
         }
-        return change;
     }
 
     public double eatHeartily(double payment) {
         // a hearty meal costs 4.30 euros
         // increase the amount of cash by the price of a hearty mean and return the change
         // if the payment parameter is not large enough, no meal is sold and the method should return the whole payment
-        double change = payment;
         if (payment >= 4.30) {
             heartyMeals += 1;
             this.money += 4.30;
-            change = change - 4.30;
+            payment -= 4.30;
+            return payment;
+        } else {
+            return payment;
         }
-        return -1;
     }
 
     public boolean eatAffordably(PaymentCard card) {
@@ -43,13 +44,11 @@ public class PaymentTerminal {
         // if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
         // otherwise false is returned
         if (card.getBalance() >= 2.50) {
-            card.takeMoney(2.50);
             affordableMeals += 1;
+            card.takeMoney(2.50);
             return true;
-        } else {
-            return false;
         }
-
+        return false;
     }
 
     public boolean eatHeartily(PaymentCard card) {
@@ -57,18 +56,17 @@ public class PaymentTerminal {
         // if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
         // otherwise false is returned
         if (card.getBalance() >= 4.30) {
+            this.heartyMeals += 1;
             card.takeMoney(4.30);
-            heartyMeals += 1;
             return true;
-        } else {
-            return false;
-        }
+        } 
+        return false;
     }
 
     public void addMoneyToCard(PaymentCard card, double sum) {
-        if (sum > 0) {
+        if (sum >0 ) {
+            this.money = this.money + sum;
             card.addMoney(sum);
-            this.money += sum;
         }
     }
 
